@@ -1,0 +1,208 @@
+/********************************/
+/* IMPORTATION */
+
+
+/********************************/
+/* VARIABLES */
+$width: 100 / 12;
+/********************************/
+/* MIXINS */
+
+/********************************/
+/* PLACEHOLDERS */
+%padding-2 {
+    padding: 2rem 0;
+}
+%padding-4 {
+    padding: 4rem 0;
+}
+%margin-bottom-1 {
+    margin-bottom: 1rem;
+}
+%margin-bottom-2 {
+    margin-bottom: 2rem;
+}
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+%align-center {
+    align-items: center;
+}
+/************************/
+/* MISE EN PAGE */
+header, .menu-categories, .qualites, .presentation>div, .solutions div, .actualites>div, .newsletter>div, .footer div {
+    @extend %flex;
+}
+header, .partenaires, .newsletter, footer {
+    @extend %align-center;
+}
+/************************/
+/* ATTRIBUTION DES LARGEURS  */
+.qualites div, .solutions article {
+    width: $width * 3%;
+    @media all and (max-width: 768px){
+        width: 50%;
+    }
+    @media all and (max-width: 480px){
+        width: 100%;
+    }
+}
+.actualites {
+    article:first-of-type {
+        width: $width * 5%;
+    }
+    .colonne-droite {
+        width: $width * 7%;
+        article {
+            width: $width * 6%;
+        }
+        article:first-of-type {
+            width: 100%;
+        }
+    }
+    @media all and (max-width: 768px) {
+        article {
+            width: 100%;
+        }
+    }
+}
+.menu-categories {
+    a, form {
+        width: (100%/7);
+    }
+}
+
+
+/************************/
+/* PADDING  */
+
+header, .newsletter, footer {
+    @extend %padding-2;
+}
+.qualites, .presentation, .solutions, .actualites, .partenaires {
+    @extend %padding-4;
+}
+/****** six mois plus tard **************/
+.temoignage-produit {
+    @extend %padding-2;
+}
+
+/************************/
+/* MARGIN  */
+h1, h2, h3, h4, h5, h6 {
+    @extend %margin-bottom-2;
+}
+.solutions, .actualites {
+    img {
+        @extend %margin-bottom-2;
+    }
+}
+.qualites {
+    span {
+       @extend %margin-bottom-2; 
+    }
+}
+p {
+    @extend %margin-bottom-1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import 'normalize';
+
+/*****************************/
+/* VARIABLES */
+$main-color: #0b5370;
+$second-color: #489bbd;
+$main-font: "Exo";
+$second-font: "Bree serif";
+
+$logement: #3851a2;
+$tertiaire-industriel: #f68c00;
+$commande-signalisation: #ea4917;
+$coffrets-armoires: #3298c2;
+$connectiques-accessoires: #b57bc3;
+$photovoltaique: #658249;
+$coffrets-prises: #a7b01e;
+
+$width: 100/12;
+
+/************************/
+/* BALISES SIMPLES */
+body {
+    font-family: $main-font;
+    font-size: 1rem;
+    color: #2f3233;
+}
+/********* ... ****************/
+/************************/
+/* MIXINS */
+
+/************************/
+/* PLACEHOLDER */
+%flex {
+    display: flex; 
+    flex-wrap: wrap;
+}
+%container {
+    max-width: 1240px;
+    margin: 0 auto;    
+}
+
+/**********************/
+/* MISE EN PAGE */
+.col3 {
+    width: $width * 3%;
+}
+.col4 {
+    width: $width * 4%;
+}
+.col6 {
+    width: $width * 6%;
+}
+.categories-menu a {
+    width: (100% / 7);
+}
+
+/**********************/
+/* ATTRIBUTION DES COULEURS */
+.tertiaire-industriel {
+    border-color: $tertiaire-industriel;
+    &:hover {
+        color: $tertiaire-industriel;
+    }
+}
